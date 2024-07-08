@@ -1,73 +1,107 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Task Management Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Overview
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is the backend for a Task Management system built using NestJS and MongoDB. It provides a RESTful APIs for managing tasks and user authentication.
 
-## Description
+## API Endpoints
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### User Authentication API
 
-## Installation
+- **Register a New User:** `POST /auth/register`
+- **User Login:** `POST /auth/login`
 
-```bash
-$ npm install
-```
+### Task Management API
 
-## Running the app
+- **Create a New Task:**  `POST /tasks`
+- **Update an Existing Task:**  `PATCH /tasks/:id`
+- **Retrieve Tasks:**  `GET /tasks`
+- **Delete a Task:**  `DELETE /tasks/:id`
+- **Search Tasks by Title:**  `GET /tasks/search?title=<taskTitle>`
 
-```bash
-# development
-$ npm run start
+## Setup Instructions
 
-# watch mode
-$ npm run start:dev
+### Prerequisites
 
-# production mode
-$ npm run start:prod
-```
+Before you begin, ensure you have met the following requirements:
 
-## Test
+- You have installed Node.js and npm. You can download Node.js from [nodejs.org](https://nodejs.org/).
+- You have installed MongoDB. You can download MongoDB compass from [mongodb.com](https://www.mongodb.com/try/download/community).
+- You have to running MongoDB compass running locally or have set up MongoDB Atlas.
 
-```bash
-# unit tests
-$ npm run test
+### Installation
 
-# e2e tests
-$ npm run test:e2e
+1. Clone the repository:
 
-# test coverage
-$ npm run test:cov
-```
+   ```sh
+   git clone https://github.com/Mg-Oo/TMS_Backend.git
+   cd TMS_Backend
 
-## Support
+2. Install the dependencies:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   ```sh
+   npm install
 
-## Stay in touch
+3. Create a .env file in the root directory and add the following environment variables:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+   - Run cmd to get JWT_SECRET key
+       ```sh
+       node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
 
-## License
+   ```sh
+   MONGODB_URI=mongodb://localhost:27017/task-management-app
+   JWT_SECRET=your_jwt_secret
+   PORT=3001
 
-Nest is [MIT licensed](LICENSE).
+4. Run the development server:
+
+   ```sh
+   npm run start
+
+## Deployment Instructions
+
+1. Create a Vercel Project:
+
+   ```sh
+   vercel
+
+2. Configure Environment Variables:
+
+3. Deploy
+
+   ```sh
+   vercel --prod
+
+## Project Structure
+
+```plaintext
+├── src
+│   ├── auth
+│   │   ├── dto
+│   │   ├── auth.controller.ts
+│   │   ├── auth.module.ts
+│   │   ├── auth.service.ts
+│   │   ├── jwt-auth.guard.ts
+│   │   ├── jwt.strategy.ts
+│   ├── tasks
+│   │   ├── dto
+│   │   ├── interfaces
+│   │   ├── schemas
+│   │   ├── tasks.controller.ts
+│   │   ├── tasks.module.ts
+│   │   ├── tasks.service.ts
+│   ├── users
+│   │   ├── interfaces
+│   │   ├── schemas
+│   │   ├── users.controller.ts
+│   │   ├── users.module.ts
+│   │   ├── users.service.ts
+│   ├── app.module.ts
+│   ├── main.ts
+├── .env
+├── .gitignore
+├── nest-cli.json
+├── package.json
+├── README.md
+├── tsconfig.build.json
+├── tsconfig.json
