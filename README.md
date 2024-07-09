@@ -2,14 +2,14 @@
 
 ## Overview
 
-This project is the backend for a Task Management system built using NestJS and MongoDB. It provides a RESTful APIs for managing tasks and user authentication.
+This project is a Task Management System backend built using NestJS and MongoDB. It provides a RESTful APIs for managing tasks and user authentication.
 
-## API Endpoints
+## API Endpoints with JWT authentication
 
-### User Authentication APIs
+### User APIs
 
-- Register a new user : `POST /auth/register`
-- Authenticate a user and get a JWT : `POST /auth/login`
+- Register : `POST /auth/register`
+- Login : `POST /auth/login`
 
 ### Task Management APIs
 
