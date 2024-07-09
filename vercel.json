@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/main.ts",
+        "use": "@vercel/node",
+        "config": {
+          "distDir": "dist"
+        }
+      }
+    ],
+    "env": {
+      "PORT": "3001",
+      "JWT_SECRET": "9b5187eaa0476e1c721a6ce59106c530cda8b8ac734db9d16de6b22951483c54",
+      "DB_BASE_URL": "mongodb://localhost:27017/tms-app"
+    }
+  }
+  
