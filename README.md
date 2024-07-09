@@ -124,3 +124,13 @@ Before you begin, ensure you have met the following requirements:
 ├── README.md
 ├── tsconfig.build.json
 ├── tsconfig.json
+```
+
+  -    dto: DTOs define data structures for transferring data between different parts of the application.
+  -    interfaces: Interfaces define the structure of objects for type safety throughout the application.
+  -    schemas: Schemas define the structure and validation rules for data stored in databases.
+  -    controllers: Controllers handle incoming requests, define API endpoints, and manage HTTP request/response cycles.
+  -    services: Services contain the application's business logic, handling data processing, database interactions, and operations requested by controllers.
+  -    modules: Modules organize the application into cohesive units, grouping related components like controllers, services, and providers.
+  -    app.module.ts: The app.module.ts file is the root module, orchestrating the application's structure by importing modules and defining global providers.
+  -    main.ts: The main.ts file serves as the application's entry point, initializing the NestJS runtime and starting the server to handle incoming requests.
