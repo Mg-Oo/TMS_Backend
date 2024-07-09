@@ -55,7 +55,7 @@ Before you begin, ensure you have met the following requirements:
        node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
 
    ```sh
-   MONGODB_URI=mongodb://localhost:27017/task-management-app
+   MONGODB_URI=mongodb://localhost:27017/tms-app
    JWT_SECRET=your_jwt_secret
    PORT=3001
 
