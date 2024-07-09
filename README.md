@@ -28,7 +28,7 @@ Before you begin, ensure you have met the following requirements:
 - Install Node.js and npm. you can download from [nodejs.org](https://nodejs.org/).
 - Install MongoDB compass. you can download from [mongodb.com](https://www.mongodb.com/try/download/compass).
 - You have to running MongoDB compass running locally or have set up MongoDB Atlas.
-  ### To run MongoDB local
+  ### To run MongoDB compass locally
      ```sh
      Open MongoDB compass
      Paste URI (mongodb://localhost:27017/tms-app) and connect New connection
