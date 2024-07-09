@@ -1,4 +1,4 @@
-# Task Management Backend
+# Task Management Project Backend (NestJs + MongoDB)
 
 ## Overview
 
@@ -6,18 +6,18 @@ This project is the backend for a Task Management system built using NestJS and 
 
 ## API Endpoints
 
-### User Authentication API
+### User Authentication APIs
 
-- **Register a New User:** `POST /auth/register`
-- **User Login:** `POST /auth/login`
+- Register a new user : `POST /auth/register`
+- Authenticate a user and get a JWT : `POST /auth/login`
 
-### Task Management API
+### Task Management APIs
 
-- **Create a New Task:**  `POST /tasks`
-- **Update an Existing Task:**  `PATCH /tasks/:id`
-- **Retrieve Tasks:**  `GET /tasks`
-- **Delete a Task:**  `DELETE /tasks/:id`
-- **Search Tasks by Title:**  `GET /tasks/search?title=<taskTitle>`
+- Get all tasks : `GET /task`
+- Create a new task : `POST /task`
+- Update a task by ID : `PATCH /task/:id`
+- Delete a task by ID : `DELETE /task/:id`
+- Search tasks by title : `GET /task/search?title=some-title`
 
 ## Setup Instructions
 
@@ -28,6 +28,13 @@ Before you begin, ensure you have met the following requirements:
 - You have installed Node.js and npm. You can download Node.js from [nodejs.org](https://nodejs.org/).
 - You have installed MongoDB. You can download MongoDB compass from [mongodb.com](https://www.mongodb.com/try/download/community).
 - You have to running MongoDB compass running locally or have set up MongoDB Atlas.
+  ### To run MongoDB local
+     ```sh
+     Dowload MongoDB compass at ( https://www.mongodb.com/try/download/compass )
+     Open MongoDB compass
+     Paste URI (mongodb://localhost:27017/tms-app) and connect New connection
+     Click + of Database (Database Name: "tms-app", Collection Name: "tasks")
+     After that, Click + of tms-app, create Collection Name: "users"
 
 ### Installation
 
@@ -56,16 +63,31 @@ Before you begin, ensure you have met the following requirements:
 4. Run the development server:
 
    ```sh
-   npm run start
+   npm run start:dev
 
 ## Deployment Instructions
 
-1. Create a Vercel Project:
+1. Building for Production before deploy
+
+    ```sh
+    npm run build
+
+2. Preview the Production Build
+
+    ```sh
+    npm run start:prod
+
+3. Install Vercel Cli
+      
+     ```sh
+     npm install -g vercel
+
+3. Create a Vercel Project:
 
    ```sh
    vercel
 
-2. Deploy
+4. Deploy
 
    ```sh
    vercel --prod
