@@ -25,16 +25,15 @@ This project is the backend for a Task Management system built using NestJS and 
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed Node.js and npm. You can download Node.js from [nodejs.org](https://nodejs.org/).
-- You have installed MongoDB. You can download MongoDB compass from [mongodb.com](https://www.mongodb.com/try/download/community).
+- Install Node.js and npm. you can download from [nodejs.org](https://nodejs.org/).
+- Install MongoDB compass. you can download from [mongodb.com](https://www.mongodb.com/try/download/compass).
 - You have to running MongoDB compass running locally or have set up MongoDB Atlas.
   ### To run MongoDB local
      ```sh
-     Dowload MongoDB compass at ( https://www.mongodb.com/try/download/compass )
      Open MongoDB compass
      Paste URI (mongodb://localhost:27017/tms-app) and connect New connection
-     Click + of Database (Database Name: "tms-app", Collection Name: "tasks")
-     After that, Click + of tms-app, create Collection Name: "users"
+     Create Database (Database Name: "tms-app")
+     Create Collections for "tasks" and "users"
 
 ### Installation
 
