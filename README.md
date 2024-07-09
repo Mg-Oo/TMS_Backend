@@ -65,9 +65,7 @@ Before you begin, ensure you have met the following requirements:
    ```sh
    vercel
 
-2. Configure Environment Variables:
-
-3. Deploy
+2. Deploy
 
    ```sh
    vercel --prod
